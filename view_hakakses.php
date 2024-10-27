@@ -12,6 +12,7 @@
 
 <!-- create_hakakses.php -->
 <a href="/tk4"><button>Menu Utama</button></a>
+<a href='index.php?logout=1'><button>Logout</button></a>
 <h2>Create Hak Akses</h2>
 <form action="view_hakakses.php" method="POST">
     <label>Nama Akses:</label>

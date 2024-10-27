@@ -10,6 +10,7 @@
 </head>
 <body>
 <a href="/tk4"><button>Menu Utama</button></a>
+<a href='index.php?logout=1'><button>Logout</button></a>
 <!-- create_pengguna.php -->
 <h2>Create Pengguna</h2>
 <form action="view_pengguna.php" method="POST">

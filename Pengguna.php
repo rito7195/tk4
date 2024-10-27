@@ -20,6 +20,24 @@ class Pengguna {
       return $this->conn->query($query);
   }
 
+  public function get($NamaPengguna) {
+    $query = "SELECT * FROM " . $this->table . " JOIN HakAkses ON " . $this->table . ".IdAkses = HakAkses.IdAkses WHERE NamaPengguna = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("s", $NamaPengguna);
+    $stmt->execute();
+
+    // Dapatkan hasil
+    $result = $stmt->get_result();
+
+    // Validasi hasil
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        return $row; 
+    } else {
+        return null;
+    }
+  }
+
   public function update($IdPengguna, $NamaPengguna, $Password, $NamaDepan, $NamaBelakang, $NoHp, $Alamat, $IdAkses) {
       $query = "UPDATE " . $this->table . " SET NamaPengguna = ?, Password = ?, NamaDepan = ?, NamaBelakang = ?, NoHp = ?, Alamat = ?, IdAkses = ? WHERE IdPengguna = ?";
       $stmt = $this->conn->prepare($query);

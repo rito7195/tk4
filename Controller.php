@@ -16,6 +16,27 @@ $barang = new Barang($conn);
 $pembelian = new Pembelian($conn);
 $penjualan = new Penjualan($conn);
 
+//Login
+if (str_contains($_SERVER['REQUEST_URI'], 'index')) {
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $namaPengguna = $_POST['nama_pengguna'];
+    $password = $_POST['password'];
+    $result = $pengguna->get($namaPengguna);
+    if ($result['Password'] == $password) {
+      session_start();
+      $_SESSION["name"] = $result['NamaAkses'];
+      header("Location: Home.php");
+    } else {
+      echo "Username atau Password salah";
+    }
+  } elseif ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['logout'])) {
+    session_start();
+    unset($_SESSION["name"]);
+    session_destroy();
+    header("Location: index.php");
+  }
+}
+
 // HakAkses
 if (str_contains($_SERVER['REQUEST_URI'], 'hakakses')) {
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {

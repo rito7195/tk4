@@ -10,6 +10,7 @@
 </head>
 <body>
 <a href="/tk4"><button>Menu Utama</button></a>
+<a href='index.php?logout=1'><button>Logout</button></a>
 <!-- Form Tambah Supplier -->
 <h3>Create Supplier</h3>
 <form action="view_supplier.php" method="POST">
