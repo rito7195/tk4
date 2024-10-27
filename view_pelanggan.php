@@ -9,7 +9,7 @@
   <title>Manage Pelanggan</title>
 </head>
 <body>
-<a href="/tk4"><button>Menu Utama</button></a>
+<a href="Home.php"><button>Menu Utama</button></a>
 <a href='index.php?logout=1'><button>Logout</button></a>
   <!-- Form Tambah Pelanggan -->
   <h3>Create Pelanggan</h3>

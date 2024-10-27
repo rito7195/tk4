@@ -40,7 +40,8 @@ function calculateProfitLoss() {
   <title>Document</title>
 </head>
 <body>
-<a href="/tk4"><button>Menu Utama</button></a>
+<a href="Home.php"><button>Menu Utama</button></a>
+<a href='index.php?logout=1'><button>Logout</button></a>
 <h2>Laporan Rugi Laba</h2>
 <table>
     <tr>
