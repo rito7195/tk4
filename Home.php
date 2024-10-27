@@ -25,9 +25,11 @@
         echo "<a href='index.php?logout=1'><button>Logout</button></a>";
       } elseif ($_SESSION["name"] == "Kasir") {
         echo "<a href='view_penjualan.php'><button>Penjualan</button></a> ";
-        echo "<a href='LabaRugi.php'><button>Laba Rugi</button></a>";
+        echo "<a href='LabaRugi.php'><button>Laba Rugi</button></a> ";
+        echo "<a href='index.php?logout=1'><button>Logout</button></a>";
       } else {
-        echo "<a href='LabaRugi.php'><button>Laba Rugi</button></a>";
+        echo "<a href='LabaRugi.php'><button>Laba Rugi</button></a> ";
+        echo "<a href='index.php?logout=1'><button>Logout</button></a>";
       }
     }
   ?>
